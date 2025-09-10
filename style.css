@@ -58,7 +58,7 @@ a:hover {
 
 }
 .statusPage h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   margin-bottom: 1rem;
   margin-top: 0;
 }
@@ -77,3 +77,4 @@ a:hover {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
