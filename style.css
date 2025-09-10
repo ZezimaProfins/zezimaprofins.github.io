@@ -39,7 +39,6 @@ body {
   background-color: var(--background);
   margin: auto;
   padding: 0 20px;
-    margin: 100 100 100 100;
 }
 
 a {
@@ -80,6 +79,7 @@ a:hover {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
 
 
 
