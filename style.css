@@ -13,6 +13,29 @@ html {
   scrollbar-gutter: stable both-edges;
 }
 
+@media screen and (min-width: 802px) {
+  body {
+    max-width: 802px;
+  }
+}
+
+@media screen and (max-width: 824px) {
+  #username {
+    display: none;
+  }
+  #caret {
+    margin: auto auto auto -3px !important;
+  }
+  body {
+    font-size: smaller !important;
+  }
+}
+@media screen and (min-width: 540px) {
+  body {
+    max-width: 540px;
+  }
+}
+
 body {
   background-color: var(--background);
   margin: auto;
@@ -55,6 +78,7 @@ a:hover {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
 
 
 
