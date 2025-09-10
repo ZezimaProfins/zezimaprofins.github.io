@@ -1,0 +1,79 @@
+:root {
+  --background: rgb(15, 18, 26);
+  --background-2: rgb(25, 28, 36);
+  --background-3: rgb(33, 36, 45);
+  --background-4: rgb(45, 49, 60);
+  scrollbar-color: var(--background-3) var(--background);
+}
+
+html {
+  color: white;
+  box-sizing: border-box;
+  font-family: SF Pro Text, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  scrollbar-gutter: stable both-edges;
+}
+
+@media screen and (min-width: 802px) {
+  body {
+    max-width: 802px;
+  }
+}
+
+@media screen and (max-width: 824px) {
+  #username {
+    display: none;
+  }
+  #caret {
+    margin: auto auto auto -3px !important;
+  }
+  body {
+    font-size: smaller !important;
+  }
+}
+@media screen and (min-width: 540px) {
+  body {
+    max-width: 540px;
+  }
+}
+body {
+  background-color: var(--background);
+  margin: auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(343, 60%, 50%);
+}
+
+a:hover {
+  color: hsl(343, 60%, 50%);
+}
+
+.statusPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.statusPage h1 {
+  font-size: 8rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.statusPage h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+.statusPage a {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 20px 24px;
+  padding-bottom: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
