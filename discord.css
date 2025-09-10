@@ -16,7 +16,7 @@ discord-widget {
     flex-direction: column;
     border-radius: 6px;
     overflow: hidden;
-    font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Whitney', 'Helvetica Neue', 'Helvetica, Arial', 'sans-serif';
     font-size: 14px;
     color: #fff;
 	margin-right: 10px;
@@ -242,4 +242,5 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
