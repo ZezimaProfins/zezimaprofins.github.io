@@ -29,10 +29,11 @@ a:hover {
 }
 
 .statusPage {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px 10px 10px 10px;
 
 }
 .statusPage h1 {
@@ -55,6 +56,7 @@ a:hover {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+
 
 
 
