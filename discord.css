@@ -19,6 +19,8 @@ discord-widget {
     font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #fff;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 discord-widget ::-webkit-scrollbar {
@@ -238,4 +240,5 @@ discord-widget widget-footer widget-button-join {
 discord-widget widget-footer widget-button-join:hover {
     background-color: var(--buttonColor);
     cursor: pointer;
+
 }
