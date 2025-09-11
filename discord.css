@@ -101,7 +101,7 @@ discord-widget widget-body widget-member {
     -webkit-box-flex: 0;
     -ms-flex: 0;
     flex: 0;
-    margin: 6px 0;
+    margin: 8px 0;
 }
 
 discord-widget widget-body widget-member widget-member-avatar {
@@ -242,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
