@@ -167,7 +167,7 @@ discord-widget widget-body widget-member widget-member-name {
     max-width: 160px;
     overflow: hidden;
     line-height: 32px;
-    padding: 0 12px 0 37px;
+    padding: 4px 8px 0 37px;
     pointer-events: none;
     position: absolute;
     -o-text-overflow: ellipsis;
@@ -242,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
