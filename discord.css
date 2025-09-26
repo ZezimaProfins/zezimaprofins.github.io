@@ -142,9 +142,6 @@ discord-widget widget-body widget-member widget-member-status-dnd {
 }
 
 discord-widget widget-body widget-member widget-member-status-text {
-    text-align: center;
-	justify-content: center;
-    align-items: center;
 	height: 32px;
     max-width: 80px;
     overflow: visible;
@@ -245,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
