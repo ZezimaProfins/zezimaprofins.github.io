@@ -146,7 +146,7 @@ discord-widget widget-body widget-member widget-member-status-text {
     max-width: 80px;
     overflow: visible;
     line-height: 32px;
-    padding: 0 8px 0 37px;
+    padding: 0 8px 0 20px;
     pointer-events: none;
     position: absolute;
     -o-text-overflow: clip;
@@ -242,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
