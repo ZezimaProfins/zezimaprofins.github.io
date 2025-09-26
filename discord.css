@@ -152,7 +152,7 @@ discord-widget widget-body widget-member widget-member-status-text {
     -o-text-overflow: clip;
     text-overflow: clip;
     top: 0;
-    left: 240px;
+    left: 220px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -242,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
