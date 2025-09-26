@@ -144,13 +144,13 @@ discord-widget widget-body widget-member widget-member-status-dnd {
 discord-widget widget-body widget-member widget-member-status-text {
     height: 32px;
     max-width: 80px;
-    overflow: hidden;
+    overflow: visible;
     line-height: 32px;
     padding: 0 8px 0 37px;
     pointer-events: none;
     position: absolute;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+    -o-text-overflow: clip;
+    text-overflow: clip;
     top: 0;
     left: 240px;
     -webkit-user-select: none;
@@ -242,6 +242,7 @@ discord-widget widget-footer widget-button-join:hover {
     cursor: pointer;
 
 }
+
 
 
 
