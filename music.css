@@ -1,4 +1,3 @@
-/* --- Music Player --- */
 #music-player-section {
   margin: 20px 0;
   display: flex;
@@ -27,7 +26,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--text-color, #fff);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -42,14 +41,22 @@
 
 #play-pause:disabled {
   cursor: not-allowed;
-  color: var(--text-muted);
+  color: var(--text-muted, #777);
+}
+
+#play-icon,
+#pause-icon,
+#replay-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
 }
 
 #progress-container {
   position: relative;
   flex: 1;
   height: 8px;
-  background-color: var(--background-4);
+  background-color: var(--background-4, #333);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -76,7 +83,7 @@
 
 #time {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-muted, #bbb);
   min-width: 65px;
   text-align: right;
 }

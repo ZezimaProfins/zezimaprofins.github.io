@@ -2,6 +2,7 @@ const audio = document.getElementById('audio');
 const playPauseBtn = document.getElementById('play-pause');
 const playIcon = document.getElementById('play-icon');
 const pauseIcon = document.getElementById('pause-icon');
+const replayIcon = document.getElementById('replay-icon');
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const thumb = document.getElementById('thumb');
@@ -11,9 +12,9 @@ const timeEl = document.getElementById('time');
 playPauseBtn.disabled = true;
 playPauseBtn.style.opacity = 0.5;
 
-// --- Initial volume (start very low for fade-in) ---
-let targetVolume = 0.3; // desired final volume
-audio.volume = 0;       // start muted
+// --- Initial volume ---
+let targetVolume = 0.3;
+audio.volume = 0;
 
 // When audio metadata is loaded
 audio.addEventListener('loadedmetadata', () => {
@@ -22,15 +23,25 @@ audio.addEventListener('loadedmetadata', () => {
   updateTime();
 });
 
-// Toggle play/pause with fade-in
+// --- Toggle Play / Pause ---
 playPauseBtn.addEventListener('click', () => {
+  if (replayIcon.style.display === "block") {
+    // Replay mode
+    replayIcon.style.display = "none";
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+    audio.currentTime = 0;
+    audio.play();
+    return;
+  }
+
   if (audio.paused) {
     audio.play().catch(err => alert("Audio could not play: " + err.message));
     playIcon.style.display = "none";
     pauseIcon.style.display = "block";
 
-    // Fade in volume over 2 seconds
-    let fadeDuration = 2000; // ms
+    // Fade in volume
+    let fadeDuration = 2000;
     let fadeSteps = 20;
     let step = 0;
     let interval = fadeDuration / fadeSteps;
@@ -39,7 +50,6 @@ playPauseBtn.addEventListener('click', () => {
       audio.volume = (targetVolume / fadeSteps) * step;
       if (step >= fadeSteps) clearInterval(fadeInterval);
     }, interval);
-
   } else {
     audio.pause();
     playIcon.style.display = "block";
@@ -47,7 +57,7 @@ playPauseBtn.addEventListener('click', () => {
   }
 });
 
-// Update progress bar & time
+// --- Update progress & time ---
 audio.addEventListener('timeupdate', updateTime);
 
 function updateTime() {
@@ -63,7 +73,7 @@ function updateTime() {
   timeEl.textContent = `${currentMinutes}:${currentSeconds.toString().padStart(2,'0')} / ${durationMinutes}:${durationSeconds.toString().padStart(2,'0')}`;
 }
 
-// --- Dragging thumb ---
+// --- Seek functionality ---
 let isDragging = false;
 
 function setAudioTime(clientX) {
@@ -74,7 +84,6 @@ function setAudioTime(clientX) {
   audio.currentTime = newTime;
 }
 
-// Mouse events
 thumb.addEventListener('mousedown', () => { isDragging = true; });
 document.addEventListener('mouseup', () => { isDragging = false; });
 document.addEventListener('mousemove', (e) => {
@@ -82,7 +91,6 @@ document.addEventListener('mousemove', (e) => {
   setAudioTime(e.clientX);
 });
 
-// Touch events for mobile
 thumb.addEventListener('touchstart', () => { isDragging = true; });
 document.addEventListener('touchend', () => { isDragging = false; });
 document.addEventListener('touchmove', (e) => {
@@ -90,15 +98,12 @@ document.addEventListener('touchmove', (e) => {
   if (e.touches.length > 0) setAudioTime(e.touches[0].clientX);
 });
 
-// Click or tap on progress bar to seek
-progressContainer.addEventListener('click', (e) => {
-  setAudioTime(e.clientX);
-});
+progressContainer.addEventListener('click', (e) => setAudioTime(e.clientX));
 progressContainer.addEventListener('touchstart', (e) => {
   if (e.touches.length > 0) setAudioTime(e.touches[0].clientX);
 });
 
-// Handle audio errors
+// --- Handle errors ---
 audio.addEventListener('error', () => {
   playPauseBtn.disabled = true;
   playPauseBtn.style.opacity = 0.5;
@@ -106,32 +111,11 @@ audio.addEventListener('error', () => {
   alert('Error: Audio file could not be loaded.');
 });
 
-// --- Replay when song ends ---
+// --- Replay when ended ---
 audio.addEventListener('ended', () => {
-  // Show replay icon
+  pauseIcon.style.display = "none";
   playIcon.style.display = "none";
-  pauseIcon.style.display = "block";
-  pauseIcon.innerHTML = "&#8635;"; // ↻ symbol for replay
-
-  // Reset progress to 100%
+  replayIcon.style.display = "block";
   progress.style.width = "100%";
   thumb.style.left = "100%";
-
-  // Wait for user to click replay
-  playPauseBtn.onclick = () => {
-    // Reset icon visuals
-    pauseIcon.innerHTML = ""; 
-    pauseIcon.style.display = "none";
-    playIcon.style.display = "block";
-
-    // Restart audio
-    audio.currentTime = 0;
-    audio.play();
-
-    playIcon.style.display = "none";
-    pauseIcon.style.display = "block";
-
-    // Restore original play/pause handler
-    playPauseBtn.onclick = null;
-  };
 });
