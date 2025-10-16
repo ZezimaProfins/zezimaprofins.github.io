@@ -85,8 +85,12 @@
     <p id="footer-text"></p>
   </footer>
   <script>
-    document.getElementById('footer-text').textContent =
-      `Kundun Online © ${new Date().getFullYear()}. All rights reserved.`;
+    document.addEventListener('DOMContentLoaded', () => {
+      const footer = document.getElementById('footer-text');
+      if (footer) {
+        footer.textContent = `Kundun Online © ${new Date().getFullYear()}. All rights reserved.`;
+      }
+    });
   </script>
 </body>
 </html>
