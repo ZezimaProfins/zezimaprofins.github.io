@@ -105,3 +105,33 @@ audio.addEventListener('error', () => {
   timeEl.textContent = 'File not found';
   alert('Error: Audio file could not be loaded.');
 });
+
+// --- Replay when song ends ---
+audio.addEventListener('ended', () => {
+  // Show replay icon
+  playIcon.style.display = "none";
+  pauseIcon.style.display = "block";
+  pauseIcon.innerHTML = "&#8635;"; // ↻ symbol for replay
+
+  // Reset progress to 100%
+  progress.style.width = "100%";
+  thumb.style.left = "100%";
+
+  // Wait for user to click replay
+  playPauseBtn.onclick = () => {
+    // Reset icon visuals
+    pauseIcon.innerHTML = ""; 
+    pauseIcon.style.display = "none";
+    playIcon.style.display = "block";
+
+    // Restart audio
+    audio.currentTime = 0;
+    audio.play();
+
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+
+    // Restore original play/pause handler
+    playPauseBtn.onclick = null;
+  };
+});
