@@ -97,8 +97,8 @@ body {
 }
 
 #social-media a img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: block;
   transition: filter 0.3s ease, transform 0.3s ease;
   will-change: transform;
@@ -155,4 +155,5 @@ footer p {
   #social-media a img { width: 24px; height: 24px; }
   #social-media a { padding: 5px; }
   footer { margin-top: 8px; }
+
 }
