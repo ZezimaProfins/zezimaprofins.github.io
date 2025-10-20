@@ -97,8 +97,8 @@ body {
 }
 
 #social-media a img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   display: block;
   transition: filter 0.3s ease, transform 0.3s ease;
   will-change: transform;
@@ -157,3 +157,4 @@ footer p {
   footer { margin-top: 8px; }
 
 }
+
