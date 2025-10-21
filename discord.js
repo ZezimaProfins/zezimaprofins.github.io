@@ -8,7 +8,7 @@ class DiscordWidget extends HTMLElement {
     const height = this.getAttribute('height') || '500px';
     const footerText = this.getAttribute('footerText') || 'Kundun Online';
     const color = this.getAttribute('color') || '#5865f2';
-    const backgroundColor = this.getAttribute('backgroundColor') || '#0f121a';
+    const backgroundColor = this.getAttribute('backgroundColor') || '#0c0c0d';
     const textColor = this.getAttribute('textColor') || '#ffffff';
     const statusColor = this.getAttribute('statusColor') || '#858585';
 
@@ -169,3 +169,4 @@ function createDefaultAvatar() {
   return 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="50" fill="%23747f8d"/%3E%3Ctext x="50" y="55" text-anchor="middle" font-size="40" fill="%23fff" font-family="sans-serif"%3E?%3C/text%3E%3C/svg%3E';
 
 }
+
