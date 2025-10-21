@@ -1,6 +1,6 @@
 discord-widget {
   --color: #5865f2;
-  --bgColor: #0c0c0d;
+  --bgColor: #000;
   --textColor: #ffffff;
   --buttonColor: #5865f2;
   --statusColor: #858585;
@@ -257,3 +257,4 @@ discord-widget widget-footer widget-button-join:not([href]) {
   }
   discord-widget widget-body widget-member widget-member-name { max-width: 100%; }
 }
+
