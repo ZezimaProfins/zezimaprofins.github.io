@@ -1,5 +1,5 @@
 :root {
-  --background: var(--background-3);
+  --background: #000;
   --background-3: #141414;
   --background-4: #1e1e1e;
   --text-color: #fff;
@@ -157,6 +157,7 @@ footer p {
   footer { margin-top: 8px; }
 
 }
+
 
 
 
